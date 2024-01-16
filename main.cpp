@@ -8,10 +8,9 @@ int main()
 
     if (CPU.isVM())
     {
-        std::string MicrosoftHV = "@Microsoft Hv";              // Microsoft Hypervisor triggers the ECX 31st bit on CPUID function ID 1
         CPU.get_vendorID(CPU.vendorID);
 
-        if (CPU.vendorID.find("Microsoft") != std::string::npos)
+        if (CPU.vendorID.find("Microsoft") != std::string::npos)                // Microsoft Hypervisor triggers the ECX 31st bit on CPUID function ID 1
         {
             std::cout << "[+] NOT IN A VM: " << CPU.vendorID << std::endl;
             return 0;
