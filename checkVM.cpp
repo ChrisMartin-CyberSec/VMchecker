@@ -4,23 +4,17 @@
 
 bool checkVM::isVM()
 {
-    int inVM = 0;
-    __asm
-    {
-        xor eax, eax        // clear out the registers
-        xor ebx, ebx
-        xor ecx, ecx
-        xor edx, edx
-        inc     eax         // set EAX to 1
-        cpuid
-        bt      ecx, 0x1f   // 31st bit of ECX is the "hypervisor present" bit
-        jc      VMfound
-        VMfound :
-        mov     edx, 0x1
-        mov     inVM, edx
-        NopInstr :
-        nop
-    }
+	int isVM{};					    // initialize isVM to zero
+    
+	__asm
+	{
+		xor		    eax, eax		// clear out EAX and ECX registers
+		xor		    ecx, ecx
+		inc		    eax
+		cpuid
+		bt		    ecx, 0x1f		// bit test of 31st bit in ECX (hypervisor bit)
+		setc	    isVM			
+	}
 
     return inVM;
 }
