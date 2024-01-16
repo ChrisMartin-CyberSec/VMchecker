@@ -7,7 +7,7 @@ bool checkVM::isVM()
     int inVM = 0;
     __asm
     {
-        xor eax, eax    // clear out the registers
+        xor eax, eax        // clear out the registers
         xor ebx, ebx
         xor ecx, ecx
         xor edx, edx
