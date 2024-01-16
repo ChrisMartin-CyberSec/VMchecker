@@ -16,4 +16,4 @@ For a listing of CPUID leaves, see the [Microsoft Documentation](https://learn.m
 
 
 
-**Note:** Microsoft Hypervisor sets the 31st bit of the `ECX` register for the `__cpuid` functionID of 1 as "set". 
+**Note:** Microsoft Hypervisor sets the 31st bit of the `ECX` register for the `__cpuid` functionID of 1 as "set". The [Microsoft Documentation](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) states that `...with virtualization enabled, the host OS also runs on top of the Hyper-V virtualization layer, just as guest operating systems do.`
