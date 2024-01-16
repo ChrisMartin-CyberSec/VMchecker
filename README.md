@@ -23,4 +23,5 @@ For a listing of CPUID leaves, see the [Microsoft Documentation](https://learn.m
 >
 >
 >**ECX 31st bit set on CPUID call with EAX=1 on Windows guest machine (*VirtualBox*)**
-![image](https://github.com/ChrisMartin-CyberSec/VMchecker/assets/111389653/c11ebffe-eba3-4cdd-8662-ee5bb5bd4295)
+![image](https://github.com/ChrisMartin-CyberSec/VMchecker/assets/111389653/c218ede4-e67b-4a6a-9b50-ac5cdcd81d96)
+
