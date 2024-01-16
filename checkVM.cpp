@@ -4,16 +4,16 @@
 
 bool checkVM::isVM()
 {
-	int isVM{};					    // initialize isVM to zero
+	int isVM{};					// initialize isVM to zero
     
 	__asm
 	{
-		xor		    eax, eax		// clear out EAX and ECX registers
-		xor		    ecx, ecx
-		inc		    eax
+		xor		eax, eax		// clear out EAX and ECX registers
+		xor		ecx, ecx
+		inc		eax
 		cpuid
-		bt		    ecx, 0x1f		// bit test of 31st bit in ECX (hypervisor bit)
-		setc	    isVM			
+		bt		ecx, 0x1f		// bit test of 31st bit in ECX (hypervisor bit)
+		setc		isVM			
 	}
 
     return inVM;
