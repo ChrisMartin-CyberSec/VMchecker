@@ -17,8 +17,8 @@ bool checkVM::isVM()
         jc      VMfound
         VMfound :
         mov     edx, 0x1
-            mov     inVM, edx
-            NopInstr :
+        mov     inVM, edx
+        NopInstr :
         nop
     }
 
