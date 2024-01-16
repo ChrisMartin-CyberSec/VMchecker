@@ -4,21 +4,21 @@
 
 int main()
 {
-    checkVM VM;
+    checkVM CPU;
 
-    if (VM.isVM())
+    if (CPU.isVM())
     {
         std::string MicrosoftHV = "@Microsoft Hv";              // Microsoft Hypervisor triggers the ECX 31st bit on CPUID function ID 1
-        VM.get_vendorID(VM.vendorID);
+        CPU.get_vendorID(CPU.vendorID);
 
-        if (VM.vendorID.find("Microsoft") != std::string::npos)
+        if (CPU.vendorID.find("Microsoft") != std::string::npos)
         {
-            std::cout << "[+] NOT IN A VM: " << VM.vendorID << std::endl;
+            std::cout << "[+] NOT IN A VM: " << CPU.vendorID << std::endl;
             return 0;
         }
     }
 
-    std::cout << "[!] VM DETECTED: " << std::endl << VM.vendorID << std::endl;
+    std::cout << "[!] VM DETECTED: " << std::endl << CPU.vendorID << std::endl;
 
     return 0;
 };
