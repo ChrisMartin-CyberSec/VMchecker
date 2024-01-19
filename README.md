@@ -14,7 +14,7 @@
 **Note:** Microsoft Hypervisor sets the 31st bit of the `ECX` register for the `__cpuid` functionID of 1 as "set". The [Microsoft Documentation](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) states that `...with virtualization enabled, the host OS also runs on top of the Hyper-V virtualization layer, just as guest operating systems do.`
 
 ## Method #1
-**ECX 31st bit set on CPUID call with EAX=1 on Windows host machine**
+>**ECX 31st bit set on CPUID call with EAX=1 on Windows host machine**
 ![image](https://github.com/ChrisMartin-CyberSec/VMchecker/assets/111389653/64514bc9-f87a-405b-8acd-c8788a838dc3)
 
 
