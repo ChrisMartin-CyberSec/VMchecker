@@ -1,17 +1,21 @@
 # VMchecker
 
-## Checks if your process is running inside of a Virtual Machine.
+Checks if your process is running inside of a Virtual Machine.
 
 
 [CPUID](https://learn.microsoft.com/en-us/cpp/intrinsics/cpuid-cpuidex?view=msvc-170) invocation is a common tactic used by malware developers to determine if their malware is being executed inside of a Virtual Machine.
 
-> - The `__cpuid` function utilizes the value in `EAX` as its function ID and returns data in the `EAX`, `EBX`, `ECX`, and `EDX` registers.
+- The `__cpuid` function utilizes the value in `EAX` as its function ID and returns data in the `EAX`, `EBX`, `ECX`, and `EDX` registers.
 
-> - For a listing of CPUID leaves, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/feature-discovery).
-
-
+- For a listing of CPUID leaves, see the [Microsoft Documentation](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/feature-discovery).
 
 **Note:** Microsoft Hypervisor sets the 31st bit of the `ECX` register for the `__cpuid` functionID of 1 as "set". The [Microsoft Documentation](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/) states that `...with virtualization enabled, the host OS also runs on top of the Hyper-V virtualization layer, just as guest operating systems do.`
+
+## Sandbox Evasion
+
+Using the `__cpuid` call, we can query the CPU for indications of virtualization. 
+By detecting virtualization, a malware author can avoid detonating their malware within a controlled environment, allowing them to evade analysis and prolong the life of their malware.
+
 
 ## Host Machine
 > **ECX 31st bit set on CPUID call with EAX=1 on Windows host machine**
